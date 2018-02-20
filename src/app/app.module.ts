@@ -12,6 +12,7 @@ import { LoginComponent } from './component/auth/login/login.component';
 import { RegisterComponent } from './component/auth/register/register.component';
 import { SharedModule } from './shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -30,6 +31,7 @@ import { FormsModule } from '@angular/forms';
     RouterModule,
     SharedModule,
     FormsModule,
+    HttpClientModule
 
   ],
   providers: [],
