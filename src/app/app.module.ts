@@ -13,7 +13,7 @@ import { RegisterComponent } from './component/auth/register/register.component'
 import { SharedModule } from './shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import { CustomFormsModule } from 'ng2-validation';
 
 
 @NgModule({
@@ -31,8 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
     SharedModule,
     FormsModule,
-    HttpClientModule
-
+    HttpClientModule,
+    CustomFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
