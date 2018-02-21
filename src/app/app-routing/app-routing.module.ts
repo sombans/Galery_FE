@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { GallerysComponent } from '../component/gallerys/gallerys.component';
 import { RegisterComponent } from '../component/auth/register/register.component';
 import { LoginComponent } from '../component/auth/login/login.component';
+import { AuthGuard } from '../shared/guards/auth.guard';
+import { GuestGuard } from '../shared/guards/guest.guard';
 
 
 const appRoutes: Routes = [
@@ -12,10 +14,10 @@ const appRoutes: Routes = [
     redirectTo: 'gallery',
     pathMatch: 'full'
   },
-  { path: 'gallery', component: GallerysComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'gallery', canActivate: [AuthGuard], component: GallerysComponent },
+  { path: 'login', canActivate: [GuestGuard], component: LoginComponent },
   { path: 'registar', component: RegisterComponent },
-]
+];
 @NgModule({
   imports: [
     CommonModule,

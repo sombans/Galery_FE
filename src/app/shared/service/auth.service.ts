@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Observer } from 'rxjs';
+import { Observable, Observer} from 'rxjs/';
 import { HttpHeaders } from '@angular/common/http';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
@@ -11,7 +11,7 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
-    private router: Router) { 
+    private router: Router) {
     this.isAuthenticated = !!window.localStorage.getItem('loginToken');
     }
 
@@ -42,8 +42,8 @@ export class AuthService {
   }
 
   public logout() {
-    this.router.navigate(['/login'])
     window.localStorage.removeItem('loginToken');
     this.isAuthenticated = false;
+    this.router.navigate(['/login']);
   }
 }
