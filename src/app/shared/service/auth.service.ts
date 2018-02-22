@@ -49,21 +49,19 @@ export class AuthService {
     this.router.navigate(['/login']);
   }
 
-  register(firstName: string, lastName: string, email: string, password: string) {
+  register(firstName: string, lastName: string, email: string, password: string, password_confirmation: string) {
     return new Observable((o: Observer<any>) => {
       this.http.post('http://localhost:8000/api/register', {
         'first_name': firstName,
         'last_name': lastName,
         'email': email,
-        'password': password
+        'password': password,
+        'password_confirmation' : password_confirmation
       })
         .subscribe(
-          (data: { token: string, user: Object }) => {
-            window.localStorage.setItem('loginToken', data.token);
-            this.isAuthenticated = true;
-            window.localStorage.setItem('user', JSON.stringify(data.user));
-            this.user = new User(data.user['id'], data.user['first_name'], data.user['last_name'], data.user['email']);
-            o.next(data.token);
+          (data: { email: string, user: Object }) => {
+            this.user = data;
+            o.next(this.user);
             return o.complete();
           },
           (err) => {
