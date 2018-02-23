@@ -6,7 +6,8 @@ import { AuthService } from './auth.service';
 @Injectable()
 export class GalerisService {
 
-    private galleries;
+    gallery: any[];
+    public galleries;
 
     constructor(private http: HttpClient,
                 private authService: AuthService) { }
@@ -24,4 +25,15 @@ export class GalerisService {
           });
       });
     }
+    public getSingleGallery(id) {
+        this.gallery = [];
+       return new Observable((o: Observer<any>) => {
+           this.http.get(`http://localhost:8000/api/gallerie/${id}`, {
+           headers: this.authService.getRequestHeaders()
+           }).subscribe((gallery: any[]) => {this.gallery = gallery;
+               o.next(this.gallery);
+               return o.complete();
+           });
+       });
+       }
 }

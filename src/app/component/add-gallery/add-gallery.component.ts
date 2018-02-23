@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddGalleryComponent implements OnInit {
 
+  public galleries;
   constructor() { }
 
   ngOnInit() {

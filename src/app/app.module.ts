@@ -16,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CustomFormsModule } from 'ng2-validation';
 import { AddGalleryComponent } from './component/add-gallery/add-gallery.component';
 import { MyGalleryComponent } from './component/my-gallery/my-gallery.component';
+import { SingleGalleryComponent } from './component/singlegallery/singlegallery.component';
+
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import { MyGalleryComponent } from './component/my-gallery/my-gallery.component'
     RegisterComponent,
     AddGalleryComponent,
     MyGalleryComponent,
+    SingleGalleryComponent,
     ],
   imports: [
     BrowserModule,
