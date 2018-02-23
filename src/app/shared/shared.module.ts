@@ -4,6 +4,7 @@ import { AuthService } from './service/auth.service';
 import { FormsModule } from '@angular/forms';
 import { GuestGuard } from './guards/guest.guard';
 import { AuthGuard } from './guards/auth.guard';
+import { GalerisService } from './service/galeris.service';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { AuthGuard } from './guards/auth.guard';
     AuthService,
     GuestGuard,
      AuthGuard,
+     GalerisService
   ]
 })
 export class SharedModule { }

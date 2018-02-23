@@ -6,17 +6,21 @@ import { RegisterComponent } from '../component/auth/register/register.component
 import { LoginComponent } from '../component/auth/login/login.component';
 import { AuthGuard } from '../shared/guards/auth.guard';
 import { GuestGuard } from '../shared/guards/guest.guard';
+import { AddGalleryComponent } from '../component/add-gallery/add-gallery.component';
+import { MyGalleryComponent } from '../component/my-gallery/my-gallery.component';
 
 
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'gallery',
+    redirectTo: '/all-galleries', canActivate: [AuthGuard],
     pathMatch: 'full'
   },
-  { path: 'gallery', canActivate: [AuthGuard], component: GallerysComponent },
+  { path: 'all-galleries', canActivate: [AuthGuard], component: GallerysComponent },
   { path: 'login', canActivate: [GuestGuard], component: LoginComponent },
   { path: 'registar', component: RegisterComponent },
+  { path: 'addGallery', canActivate: [AuthGuard], component: AddGalleryComponent},
+  { path: 'myGallery', canActivate: [AuthGuard], component: MyGalleryComponent}
 ];
 @NgModule({
   imports: [

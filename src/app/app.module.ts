@@ -14,6 +14,8 @@ import { SharedModule } from './shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomFormsModule } from 'ng2-validation';
+import { AddGalleryComponent } from './component/add-gallery/add-gallery.component';
+import { MyGalleryComponent } from './component/my-gallery/my-gallery.component';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import { CustomFormsModule } from 'ng2-validation';
     GallerysComponent,
     LoginComponent,
     RegisterComponent,
+    AddGalleryComponent,
+    MyGalleryComponent,
     ],
   imports: [
     BrowserModule,
