@@ -34,6 +34,5 @@ export class SingleGalleryComponent implements OnInit {
 }
 
   ngOnInit() {
-    $('.carousel').carousel();
   }
 }
